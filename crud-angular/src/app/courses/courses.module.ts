@@ -14,7 +14,7 @@ import { CoursesComponent } from './courses/courses.component';
   imports: [
     CommonModule,
     CoursesRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
   ],
 })
 export class CoursesModule { }
