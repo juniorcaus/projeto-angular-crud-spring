@@ -6,24 +6,20 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
+  courses$: Observable<Course[]>;
 
-  courses: Observable<Course[]>;
-
-  displayedColumns = ['name','category'];
+  displayedColumns = ['name', 'category'];
 
   // CoursesService: CoursesService;
-
 
   constructor(private CoursesService: CoursesService) {
     // this.courses = [];
     // this.CoursesService = new CoursesService();
-    this.courses = this.CoursesService.list();
-   }
-
-  ngOnInit(): void {
+    this.courses$ = this.CoursesService.list();
   }
 
+  ngOnInit(): void {}
 }
